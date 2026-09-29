@@ -1,0 +1,102 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f6f8;
+  color: #17181c;
+}
+button { font: inherit; }
+.app { min-height: 100vh; }
+header {
+  padding: 48px max(24px, calc((100vw - 1050px) / 2));
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+main {
+  width: min(1050px, calc(100% - 32px));
+  margin: 24px auto 80px;
+  display: grid;
+  gap: 18px;
+}
+.panel {
+  background: white;
+  border: 1px solid #e3e5e9;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.04);
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  color: #626975;
+}
+h1 { font-size: clamp(34px, 5vw, 58px); margin: 8px 0; }
+h2 { margin: 0 0 6px; font-size: 25px; }
+h3 { margin-top: 28px; }
+p { color: #626975; line-height: 1.55; }
+.contacts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.contact {
+  text-align: left;
+  padding: 18px;
+  border: 1px solid #dddfe4;
+  border-radius: 14px;
+  background: #fafafa;
+  cursor: pointer;
+}
+.contact:hover, .contact.active { border-color: #17181c; background: #f1f2f4; }
+.contact strong, .contact span { display: block; }
+.contact span { color: #737985; margin-top: 5px; font-size: 14px; }
+.profileHead, .briefTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.primary {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 18px;
+  background: #17181c;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+}
+.primary:disabled { opacity: .55; cursor: wait; }
+.meetings { display: grid; gap: 10px; }
+.meetings article {
+  border-left: 3px solid #d6d9df;
+  padding: 6px 0 6px 16px;
+}
+.meetings time { font-size: 13px; font-weight: 800; }
+.meetings p { margin: 5px 0; }
+.memoryBadge {
+  border: 1px solid #cfd3da;
+  border-radius: 999px;
+  padding: 7px 11px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.briefText {
+  white-space: pre-wrap;
+  line-height: 1.7;
+  margin-top: 22px;
+}
+.trace {
+  margin-top: 24px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 18px;
+}
+.trace summary { cursor: pointer; font-weight: 800; }
+.trace pre {
+  white-space: pre-wrap;
+  overflow: auto;
+  background: #f6f7f8;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 12px;
+}
+@media (max-width: 700px) {
+  .contacts { grid-template-columns: 1fr; }
+  .profileHead, .briefTitle { align-items: flex-start; flex-direction: column; }
+}
